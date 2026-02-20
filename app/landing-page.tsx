@@ -236,18 +236,21 @@ export default function LandingPage() {
                     key={img.id}
                     variants={thumbnailVariant}
                     style={{ y: img.parallax }}
-                    className="aspect-square bg-gradient-to-br from-slate-200 to-slate-300 rounded-lg border border-red-200 overflow-hidden group hover:border-red-400 transition-all"
+                    className="aspect-square rounded-lg border border-red-200 overflow-hidden group hover:border-red-400 transition-all relative"
                   >
-                    <div className="w-full h-full flex items-center justify-center relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-slate-400/30 to-slate-600/30" />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm p-2">
-                        <p className="text-white text-xs font-semibold truncate">
-                          Menu photo from review
-                        </p>
-                        <p className="text-white/80 text-xs">
-                          {img.reviewer} · {img.date}
-                        </p>
-                      </div>
+                    <img
+                      src={`https://placehold.co/400x400/e2e8f0/64748b?text=Menu+${img.id}`}
+                      alt={`Menu photo from ${img.reviewer}`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 backdrop-blur-sm p-2">
+                      <p className="text-white text-xs font-semibold truncate">
+                        Menu photo from review
+                      </p>
+                      <p className="text-white/80 text-xs">
+                        {img.reviewer} · {img.date}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -258,18 +261,21 @@ export default function LandingPage() {
                 {mockYelpImages.map((img) => (
                   <div
                     key={img.id}
-                    className="flex-shrink-0 w-[280px] aspect-square bg-gradient-to-br from-slate-200 to-slate-300 rounded-lg border border-red-200 overflow-hidden snap-start"
+                    className="flex-shrink-0 w-[280px] aspect-square rounded-lg border border-red-200 overflow-hidden snap-start relative"
                   >
-                    <div className="w-full h-full flex items-center justify-center relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-slate-400/30 to-slate-600/30" />
-                      <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm p-3">
-                        <p className="text-white text-sm font-semibold">
-                          Menu photo from review
-                        </p>
-                        <p className="text-white/80 text-xs">
-                          {img.reviewer} · {img.date}
-                        </p>
-                      </div>
+                    <img
+                      src={`https://placehold.co/400x400/e2e8f0/64748b?text=Menu+${img.id}`}
+                      alt={`Menu photo from ${img.reviewer}`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 backdrop-blur-sm p-3">
+                      <p className="text-white text-sm font-semibold">
+                        Menu photo from review
+                      </p>
+                      <p className="text-white/80 text-xs">
+                        {img.reviewer} · {img.date}
+                      </p>
                     </div>
                   </div>
                 ))}
