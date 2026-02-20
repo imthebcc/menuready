@@ -159,8 +159,8 @@ export default function LandingPage() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-12 items-center relative">
-            {/* Left: Yelp Images (Cooler, Muted Tone) */}
-            <div className="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-xl">
+            {/* Left: Yelp Images (Flat Neutral Background) */}
+            <div className="bg-slate-100 p-6 rounded-xl">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 bg-red-600 text-white rounded flex items-center justify-center text-sm font-bold">
                   Y
@@ -252,8 +252,8 @@ export default function LandingPage() {
               </div>
             </div>
 
-            {/* Right: Structured Menu (Brighter, More Contrast) */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl">
+            {/* Right: Structured Menu (Clean White Background) */}
+            <div className="bg-white p-6 rounded-xl">
               <div className="flex items-center gap-2 mb-4">
                 <i className="ri-checkbox-circle-line text-3xl text-green-600"></i>
                 <h4 className="font-bold text-slate-900 text-lg">Your Structured Digital Version</h4>
