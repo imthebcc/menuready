@@ -7,48 +7,48 @@ import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { StickyMobileCTA } from '@/components/StickyMobileCTA';
 
 export default function LandingPage() {
-  // Mock Yelp review images data - photos of the SAME physical menu from different angles
+  // Mock Yelp review images data - photos of the SAME physical Sunrise Diner menu from different angles
   const mockYelpImages = [
     { 
       id: 1, 
       reviewer: 'Sarah M.', 
       date: 'Jan 15, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=400&h=400&fit=crop&auto=format',
+      imageUrl: '/menu-photos/menu1.jpg',
       rotation: 2
     },
     { 
       id: 2, 
       reviewer: 'Mike R.', 
       date: 'Jan 22, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&fit=crop&auto=format',
+      imageUrl: '/menu-photos/menu2.jpg',
       rotation: -1
     },
     { 
       id: 3, 
       reviewer: 'Jessica L.', 
       date: 'Feb 1, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=400&fit=crop&auto=format',
+      imageUrl: '/menu-photos/menu3.jpg',
       rotation: 3
     },
     { 
       id: 4, 
       reviewer: 'David K.', 
       date: 'Feb 5, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop&auto=format',
+      imageUrl: '/menu-photos/menu4.jpg',
       rotation: -2
     },
     { 
       id: 5, 
       reviewer: 'Amanda P.', 
       date: 'Feb 8, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=400&fit=crop&auto=format',
+      imageUrl: '/menu-photos/menu5.jpg',
       rotation: 1
     },
     { 
       id: 6, 
       reviewer: 'Chris W.', 
       date: 'Feb 10, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=400&fit=crop&auto=format',
+      imageUrl: '/menu-photos/menu6.jpg',
       rotation: -3
     },
   ];
