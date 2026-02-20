@@ -31,7 +31,7 @@ export default function PreviewPage() {
   const [menu, setMenu] = useState<MenuCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [showModal, setShowModal] = useState(false);
+  const [showEmailInput, setShowEmailInput] = useState(false);
   const [email, setEmail] = useState('');
   const [confirmOwnership, setConfirmOwnership] = useState(false);
   const [publishing, setPublishing] = useState(false);
@@ -71,11 +71,12 @@ export default function PreviewPage() {
 
   async function handlePublishFree() {
     if (!email || !confirmOwnership) {
-      alert('Please enter your email and confirm ownership');
+      setError('Please enter your email and confirm ownership');
       return;
     }
 
     setPublishing(true);
+    setError('');
 
     try {
       const res = await fetch('/api/publish-free', {
@@ -91,7 +92,7 @@ export default function PreviewPage() {
       const data = await res.json();
 
       if (!res.ok) {
-        alert(data.error || 'Failed to publish');
+        setError(data.error || 'Failed to publish');
         setPublishing(false);
         return;
       }
@@ -99,7 +100,7 @@ export default function PreviewPage() {
       // Redirect to confirmation
       router.push(`/confirmation?slug=${slug}`);
     } catch (err) {
-      alert('Failed to publish. Please try again.');
+      setError('Failed to publish. Please try again.');
       setPublishing(false);
     }
   }
@@ -247,13 +248,70 @@ export default function PreviewPage() {
               <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
                 <h3 className="text-lg font-bold text-slate-900 mb-4">Choose Your Path</h3>
 
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-all mb-3"
-                >
-                  Publish Free
-                </button>
-                <p className="text-xs text-slate-500 text-center mb-6">Get link + QR instantly</p>
+                {!showEmailInput ? (
+                  <>
+                    <button
+                      onClick={() => setShowEmailInput(true)}
+                      className="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-all mb-2"
+                    >
+                      Claim My Menu — Free
+                    </button>
+                    <p className="text-xs text-slate-500 text-center mb-6">
+                      Your menu is already built. Just confirm your email to go live.
+                    </p>
+                  </>
+                ) : (
+                  <div className="mb-6">
+                    <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      Confirm Your Email
+                    </label>
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        setError('');
+                      }}
+                      placeholder="your@email.com"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent mb-3"
+                    />
+                    <label className="flex items-start mb-3">
+                      <input
+                        type="checkbox"
+                        checked={confirmOwnership}
+                        onChange={(e) => {
+                          setConfirmOwnership(e.target.checked);
+                          setError('');
+                        }}
+                        className="mt-1 mr-2"
+                      />
+                      <span className="text-sm text-slate-700">
+                        I own or manage {restaurant?.name}
+                      </span>
+                    </label>
+                    {error && (
+                      <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg">
+                        <p className="text-sm text-red-600">{error}</p>
+                      </div>
+                    )}
+                    <button
+                      onClick={handlePublishFree}
+                      disabled={publishing || !email || !confirmOwnership}
+                      className="w-full bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-700 transition-all disabled:bg-slate-300 disabled:cursor-not-allowed mb-2"
+                    >
+                      {publishing ? 'Publishing...' : 'Confirm & Go Live'}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setShowEmailInput(false);
+                        setError('');
+                      }}
+                      className="w-full text-slate-600 text-sm hover:text-slate-900"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                )}
 
                 <button
                   onClick={() => handleUpgrade('onetime')}
@@ -261,7 +319,7 @@ export default function PreviewPage() {
                 >
                   Upgrade — $99 one-time
                 </button>
-                <p className="text-xs text-slate-500 text-center mt-2">We submit to Yelp</p>
+                <p className="text-xs text-slate-500 text-center mt-2">Priority listing + custom domain</p>
               </div>
 
               {/* Source */}
@@ -273,56 +331,6 @@ export default function PreviewPage() {
         </div>
       </div>
 
-      {/* Free Publish Modal */}
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
-            <h3 className="text-xl font-bold text-slate-900 mb-4">Publish Your Menu (Free)</h3>
-
-            <div className="mb-4">
-              <label className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="your@email.com"
-                className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-red-600 focus:border-transparent"
-              />
-            </div>
-
-            <div className="mb-6">
-              <label className="flex items-start">
-                <input
-                  type="checkbox"
-                  checked={confirmOwnership}
-                  onChange={(e) => setConfirmOwnership(e.target.checked)}
-                  className="mt-1 mr-2"
-                />
-                <span className="text-sm text-slate-700">
-                  I own or manage {restaurant.name}
-                </span>
-              </label>
-            </div>
-
-            <div className="flex gap-3">
-              <button
-                onClick={() => setShowModal(false)}
-                className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50"
-                disabled={publishing}
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handlePublishFree}
-                disabled={publishing}
-                className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-slate-300"
-              >
-                {publishing ? 'Publishing...' : 'Publish Now'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
