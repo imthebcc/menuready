@@ -79,7 +79,7 @@ export default function LandingPage() {
             <span className="hidden sm:inline text-slate-300">|</span>
             <span className="font-semibold">No upfront credit card required</span>
             <span className="hidden sm:inline text-slate-300">|</span>
-            <span className="font-semibold text-red-600">From public Yelp reviews</span>
+            <span className="font-semibold">Built from your Yelp photos</span>
           </div>
         </div>
       </div>
@@ -101,11 +101,8 @@ export default function LandingPage() {
         </FadeUp>
         
         <FadeUp delay={0.18}>
-          <p className="text-xl md:text-2xl text-slate-600 mb-6 max-w-3xl mx-auto">
-            We identified your restaurant as one that can <strong className="text-slate-900">increase revenue, improve reviews, and boost retention</strong> with a structured digital menu.
-          </p>
-          <p className="text-lg text-slate-600 mb-8 max-w-3xl mx-auto">
-            We've already done the work. Preview it free.
+          <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto">
+            Your menu is already built. Just review it and make it live — free.
           </p>
         </FadeUp>
 
@@ -385,7 +382,7 @@ export default function LandingPage() {
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Increased Google discoverability</h4>
                 <p className="text-sm text-slate-600">
-                  Digital menus improve search visibility and SEO
+                  A structured digital menu makes your items indexable by Google, so customers find you before they find a competitor.
                 </p>
               </div>
 
@@ -395,7 +392,7 @@ export default function LandingPage() {
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Faster table turnover</h4>
                 <p className="text-sm text-slate-600">
-                  Customers decide faster when menu is clear
+                  Customers who know what they want before they sit down order faster and leave happier.
                 </p>
               </div>
 
@@ -405,27 +402,12 @@ export default function LandingPage() {
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Higher customer confidence</h4>
                 <p className="text-sm text-slate-600">
-                  Professional presentation builds trust
+                  A clean, professional menu tells customers your restaurant takes quality seriously — before they ever taste the food.
                 </p>
               </div>
             </div>
 
             {/* Conservative Claims Disclaimer */}
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-6 max-w-3xl mx-auto">
-              <div className="flex items-start gap-4">
-                <i className="ri-checkbox-circle-line text-2xl text-green-600 flex-shrink-0 mt-1"></i>
-                <div>
-                  <p className="text-slate-900 font-semibold mb-2">
-                    Conservative estimate based on industry data:
-                  </p>
-                  <p className="text-slate-700 text-sm">
-                    Restaurants with structured menus typically see measurable increases in order value and customer satisfaction. While results vary, clear menu presentation consistently improves customer experience and business outcomes.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </RevealOnScroll>
       </section>
 
       {/* How It Works */}
@@ -492,7 +474,7 @@ export default function LandingPage() {
             href="/onboarding"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 text-lg font-bold rounded-lg hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl"
           >
-            Review My Draft Menu
+            See My Menu Draft (Free)
             <i className="ri-arrow-right-line text-xl"></i>
           </Link>
         </div>
