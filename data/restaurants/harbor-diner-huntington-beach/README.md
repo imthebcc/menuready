@@ -1,6 +1,6 @@
 # Harbor Diner - Huntington Beach, CA
 
-**Status:** Contacted (Email sent 2/20/2026)
+**Status:** Contacted (Yelp message sent 2/20/2026)
 
 ---
 

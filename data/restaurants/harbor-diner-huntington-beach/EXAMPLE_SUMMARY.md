@@ -92,34 +92,39 @@
 
 **What I did:**
 - Generated preview URL: `/preview/harbor-diner-huntington-beach`
-- Drafted personalized email
+- Went to Yelp listing
+- Clicked "Message the Business"
+- Sent Yelp message
 - Updated spreadsheet
 - Status: "Contacted"
 
-**Email sent:**
+**Yelp Message Sent:**
 ```
-Subject: We built your digital menu for free
+Hi! 👋
 
-Hi Harbor Diner,
+I came across your Yelp page and noticed you could benefit from a 
+structured digital menu.
 
-We came across your Yelp listing and noticed you could benefit 
-from a structured digital menu.
+I went ahead and built one for you using your existing menu photos.
 
-We've already built one for you using your existing menu photos.
-
-Preview it here (free, no signup required):
+Preview it here (free, no signup):
 https://menuready-template.vercel.app/preview/harbor-diner-huntington-beach
 
-If you like it, you can:
-- Publish it instantly (FREE)
-- Upgrade to Done-For-You service ($49 - we handle Yelp submission)
+If you like it:
+✓ Publish instantly (FREE)
+✓ Upgrade to Done-For-You ($49 - I'll submit it to Yelp for you)
 
-Questions? Just reply to this email.
+Let me know if you have questions!
 
-Best,
-Remi
+- Remi
 MenuReady
 ```
+
+**Why Yelp message?**
+- Restaurants check Yelp daily
+- No need to find email address
+- Higher response rate
+- More casual/friendly tone works better
 
 ---
 

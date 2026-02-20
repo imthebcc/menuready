@@ -54,7 +54,8 @@
 
 ### STEP 5: OUTREACH (3 min)
 - Generate preview link
-- Send email with preview
+- Send Yelp message OR Instagram DM
+- Use template (see SOP)
 - Update spreadsheet
 - Status = "Contacted"
 

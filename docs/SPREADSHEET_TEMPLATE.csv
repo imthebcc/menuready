@@ -1,6 +1,6 @@
-Restaurant,Yelp URL,City,Status,Preview Link,Date Contacted,Viewed,Date Published,Paid,Revenue,Yelp Submitted,Notes
-Sunrise Diner,https://yelp.com/biz/sunrise-diner-orange,Orange,Paid,https://menuready.com/preview/sunrise-diner-orange-ca,2/20/2026,Yes,2/21/2026,Yes,$49,2/22/2026,Yelp submission complete
-Joe's Cafe,https://yelp.com/biz/joes-cafe-irvine,Irvine,Published,https://menuready.com/preview/joes-cafe-irvine-ca,2/20/2026,Yes,2/21/2026,No,$0,,Using free plan
-Main Street Grill,https://yelp.com/biz/main-street-grill-costa-mesa,Costa Mesa,Contacted,https://menuready.com/preview/main-street-grill-costa-mesa,2/21/2026,No,,,,,Follow up 2/24
-The Corner Bistro,https://yelp.com/biz/corner-bistro-newport,Newport Beach,Structured,https://menuready.com/preview/corner-bistro-newport,,,,,,Menu QA complete
-Harbor Cafe,https://yelp.com/biz/harbor-cafe-huntington,Huntington Beach,Identified,,,,,,,Photos downloaded
+Restaurant,Yelp URL,City,Status,Preview Link,Date Contacted,Method,Viewed,Date Published,Paid,Revenue,Yelp Submitted,Notes
+Sunrise Diner,https://yelp.com/biz/sunrise-diner-orange,Orange,Paid,https://menuready.com/preview/sunrise-diner-orange-ca,2/20/2026,Yelp,Yes,2/21/2026,Yes,$49,2/22/2026,Yelp submission complete
+Joe's Cafe,https://yelp.com/biz/joes-cafe-irvine,Irvine,Published,https://menuready.com/preview/joes-cafe-irvine-ca,2/20/2026,Instagram,Yes,2/21/2026,No,$0,,Using free plan
+Main Street Grill,https://yelp.com/biz/main-street-grill-costa-mesa,Costa Mesa,Contacted,https://menuready.com/preview/main-street-grill-costa-mesa,2/21/2026,Yelp,No,,,,,Follow up 2/24
+The Corner Bistro,https://yelp.com/biz/corner-bistro-newport,Newport Beach,Structured,https://menuready.com/preview/corner-bistro-newport,,,,,,,Menu QA complete
+Harbor Cafe,https://yelp.com/biz/harbor-cafe-huntington,Huntington Beach,Identified,,,,,,,,Photos downloaded

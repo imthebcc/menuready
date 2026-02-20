@@ -171,37 +171,72 @@ Example:
 https://menuready-template.vercel.app/preview/sunrise-diner-orange-ca
 ```
 
-### Email template:
+### Outreach Method (Choose based on availability):
 
-**Subject:** We built your digital menu for free
+**OPTION 1: Yelp Message (PREFERRED)**
+- Go to restaurant's Yelp page
+- Click "Message the Business"
+- Use template below
 
-**Body:**
+**OPTION 2: Instagram DM**
+- Find restaurant's Instagram (@username on Yelp or Google)
+- Send DM with template below
+
+**OPTION 3: Contact Form**
+- Use website contact form if available
+
+---
+
+### Yelp Message Template:
+
 ```
-Hi [Restaurant Name],
+Hi! 👋
 
-We came across your Yelp listing and noticed you could benefit from a structured digital menu.
+I came across your Yelp page and noticed you could benefit from a structured digital menu.
 
-We've already built one for you using your existing menu photos.
+I went ahead and built one for you using your existing menu photos.
 
-Preview it here (free, no signup required):
+Preview it here (free, no signup):
 [PREVIEW LINK]
 
-If you like it, you can publish it instantly (free) or upgrade to our Done-For-You service ($49 - we handle Yelp submission for you).
+If you like it:
+✓ Publish instantly (FREE)
+✓ Upgrade to Done-For-You ($49 - I'll submit it to Yelp for you)
 
-Questions? Just reply to this email.
+Let me know if you have questions!
 
-Best,
-[Your Name]
+- [Your Name]
 MenuReady
 ```
 
-### Send method:
-- Option 1: Email (if available on website)
-- Option 2: Contact form on website
-- Option 3: Yelp message (if platform allows)
+---
+
+### Instagram DM Template:
+
+```
+Hey [Restaurant Name]! 👋
+
+Saw your page and built you a free digital menu using your existing menu photos from Yelp.
+
+Check it out: [PREVIEW LINK]
+
+You can publish it instantly (free) or I can handle Yelp submission for you ($49).
+
+No strings attached - just want to help local restaurants!
+
+Let me know if you want to see it live 🙌
+```
+
+---
+
+### Send method priority:
+1. **Yelp message** (best response rate, they check daily)
+2. **Instagram DM** (good for younger/modern restaurants)
+3. **Contact form** (fallback if above unavailable)
 
 ### Update spreadsheet:
 - Status = "Contacted"
+- Method = "Yelp" or "Instagram" or "Contact Form"
 - Date sent
 
 **Time:** 3 minutes per restaurant
