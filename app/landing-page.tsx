@@ -7,48 +7,48 @@ import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { StickyMobileCTA } from '@/components/StickyMobileCTA';
 
 export default function LandingPage() {
-  // Mock Yelp review images data with realistic menu photos
+  // Mock Yelp review images data - photos of the SAME physical menu from different angles
   const mockYelpImages = [
     { 
       id: 1, 
       reviewer: 'Sarah M.', 
       date: 'Jan 15, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?w=400&h=400&fit=crop&auto=format',
+      imageUrl: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=400&h=400&fit=crop&auto=format',
       rotation: 2
     },
     { 
       id: 2, 
       reviewer: 'Mike R.', 
       date: 'Jan 22, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1555992336-fb0d29498b13?w=400&h=400&fit=crop&auto=format',
+      imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop&auto=format',
       rotation: -1
     },
     { 
       id: 3, 
       reviewer: 'Jessica L.', 
       date: 'Feb 1, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=400&fit=crop&auto=format',
+      imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=400&fit=crop&auto=format',
       rotation: 3
     },
     { 
       id: 4, 
       reviewer: 'David K.', 
       date: 'Feb 5, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=400&h=400&fit=crop&auto=format',
+      imageUrl: 'https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=400&h=400&fit=crop&auto=format',
       rotation: -2
     },
     { 
       id: 5, 
       reviewer: 'Amanda P.', 
       date: 'Feb 8, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop&auto=format',
+      imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop&auto=format',
       rotation: 1
     },
     { 
       id: 6, 
       reviewer: 'Chris W.', 
       date: 'Feb 10, 2026',
-      imageUrl: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&h=400&fit=crop&auto=format',
+      imageUrl: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=400&h=400&fit=crop&auto=format',
       rotation: -3
     },
   ];
