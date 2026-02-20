@@ -1,0 +1,174 @@
+{
+  "restaurant": {
+    "name": "Sunrise Diner",
+    "tagline": "Orange County's Favorite Family Diner Since 1985",
+    "logo": "",
+    "colors": {
+      "primary": "#D97706",
+      "background": "#FFFBEB"
+    },
+    "reviewUrl": "https://g.page/r/example"
+  },
+  "menu": {
+    "sections": [
+      {
+        "name": "Breakfast",
+        "items": [
+          {
+            "name": "Classic Pancake Stack",
+            "description": "Three fluffy buttermilk pancakes with maple syrup and butter",
+            "price": "$9.99",
+            "tags": []
+          },
+          {
+            "name": "Sunrise Special",
+            "description": "Two eggs any style, bacon or sausage, hash browns, and toast",
+            "price": "$11.99",
+            "tags": []
+          },
+          {
+            "name": "Veggie Omelet",
+            "description": "Three-egg omelet with bell peppers, onions, mushrooms, and cheese",
+            "price": "$10.99",
+            "tags": ["vegetarian"]
+          },
+          {
+            "name": "French Toast Combo",
+            "description": "Thick-cut French toast with fresh berries and whipped cream",
+            "price": "$10.49",
+            "tags": []
+          },
+          {
+            "name": "Breakfast Burrito",
+            "description": "Scrambled eggs, cheese, potatoes, and your choice of meat wrapped in a warm tortilla",
+            "price": "$9.49",
+            "tags": []
+          },
+          {
+            "name": "Avocado Toast",
+            "description": "Smashed avocado on multigrain toast with cherry tomatoes and everything bagel seasoning",
+            "price": "$8.99",
+            "tags": ["vegan"]
+          }
+        ]
+      },
+      {
+        "name": "Lunch",
+        "items": [
+          {
+            "name": "Classic Cheeseburger",
+            "description": "Half-pound beef patty with lettuce, tomato, onion, pickles, and American cheese",
+            "price": "$12.99",
+            "tags": []
+          },
+          {
+            "name": "Grilled Chicken Sandwich",
+            "description": "Marinated chicken breast with avocado, bacon, and chipotle mayo",
+            "price": "$11.99",
+            "tags": []
+          },
+          {
+            "name": "Caesar Salad",
+            "description": "Crisp romaine, parmesan, croutons, and house-made Caesar dressing",
+            "price": "$9.99",
+            "tags": ["vegetarian"]
+          },
+          {
+            "name": "Fish & Chips",
+            "description": "Beer-battered cod with crispy fries and tartar sauce",
+            "price": "$13.99",
+            "tags": []
+          },
+          {
+            "name": "Turkey Club",
+            "description": "Triple-decker with turkey, bacon, lettuce, tomato, and mayo",
+            "price": "$11.49",
+            "tags": []
+          },
+          {
+            "name": "Veggie Wrap",
+            "description": "Grilled vegetables, hummus, mixed greens in a spinach tortilla",
+            "price": "$9.99",
+            "tags": ["vegan"]
+          },
+          {
+            "name": "Patty Melt",
+            "description": "Beef patty with caramelized onions and Swiss cheese on rye bread",
+            "price": "$12.49",
+            "tags": []
+          },
+          {
+            "name": "Chicken Tenders",
+            "description": "Hand-breaded chicken tenders with fries and honey mustard",
+            "price": "$10.99",
+            "tags": []
+          }
+        ]
+      },
+      {
+        "name": "Desserts",
+        "items": [
+          {
+            "name": "Apple Pie à la Mode",
+            "description": "Homemade apple pie with vanilla ice cream",
+            "price": "$6.99",
+            "tags": []
+          },
+          {
+            "name": "Chocolate Brownie Sundae",
+            "description": "Warm brownie topped with ice cream, whipped cream, and chocolate sauce",
+            "price": "$7.49",
+            "tags": []
+          },
+          {
+            "name": "New York Cheesecake",
+            "description": "Classic creamy cheesecake with graham cracker crust",
+            "price": "$6.49",
+            "tags": []
+          },
+          {
+            "name": "Seasonal Fruit Cobbler",
+            "description": "Fresh seasonal fruit baked with a buttery crumble topping",
+            "price": "$5.99",
+            "tags": []
+          }
+        ]
+      },
+      {
+        "name": "Drinks",
+        "items": [
+          {
+            "name": "Fresh Brewed Coffee",
+            "description": "Unlimited refills",
+            "price": "$2.99",
+            "tags": []
+          },
+          {
+            "name": "Soft Drinks",
+            "description": "Coke, Diet Coke, Sprite, Root Beer",
+            "price": "$2.49",
+            "tags": []
+          },
+          {
+            "name": "Fresh Squeezed Orange Juice",
+            "description": "Made daily",
+            "price": "$3.99",
+            "tags": []
+          },
+          {
+            "name": "Milkshakes",
+            "description": "Vanilla, Chocolate, or Strawberry",
+            "price": "$5.49",
+            "tags": []
+          },
+          {
+            "name": "Iced Tea",
+            "description": "Sweet or unsweetened",
+            "price": "$2.49",
+            "tags": []
+          }
+        ]
+      }
+    ]
+  }
+}
