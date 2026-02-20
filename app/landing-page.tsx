@@ -1,84 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, CheckCircle, TrendingUp, Clock, Users, Star, DollarSign, Zap, Eye } from 'lucide-react';
+import { FadeUp } from '@/components/motion/FadeUp';
+import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
+import { StickyMobileCTA } from '@/components/StickyMobileCTA';
 
 export default function LandingPage() {
-  const [mounted, setMounted] = useState(false);
-  const { scrollY } = useScroll();
-  
-  // Parallax transforms for thumbnails
-  const y1 = useTransform(scrollY, [0, 500], [0, -20]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -40]);
-  const y3 = useTransform(scrollY, [0, 500], [0, -60]);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   // Mock Yelp review images data
   const mockYelpImages = [
-    { id: 1, reviewer: 'Sarah M.', date: 'Jan 15, 2026', parallax: y1 },
-    { id: 2, reviewer: 'Mike R.', date: 'Jan 22, 2026', parallax: y2 },
-    { id: 3, reviewer: 'Jessica L.', date: 'Feb 1, 2026', parallax: y3 },
-    { id: 4, reviewer: 'David K.', date: 'Feb 5, 2026', parallax: y1 },
-    { id: 5, reviewer: 'Amanda P.', date: 'Feb 8, 2026', parallax: y2 },
-    { id: 6, reviewer: 'Chris W.', date: 'Feb 10, 2026', parallax: y3 },
+    { id: 1, reviewer: 'Sarah M.', date: 'Jan 15, 2026' },
+    { id: 2, reviewer: 'Mike R.', date: 'Jan 22, 2026' },
+    { id: 3, reviewer: 'Jessica L.', date: 'Feb 1, 2026' },
+    { id: 4, reviewer: 'David K.', date: 'Feb 5, 2026' },
+    { id: 5, reviewer: 'Amanda P.', date: 'Feb 8, 2026' },
+    { id: 6, reviewer: 'Chris W.', date: 'Feb 10, 2026' },
   ];
-
-  // Animation variants
-  const textRiseVariant = {
-    hidden: { opacity: 0, y: 20, filter: 'blur(10px)' },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      filter: 'blur(0px)',
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-    }
-  };
-
-  const scaleRevealVariant = {
-    hidden: { opacity: 0, scale: 0.95, filter: 'blur(10px)' },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      filter: 'blur(0px)',
-      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
-    }
-  };
-
-  const cardLiftVariant = {
-    rest: { y: 0, rotateX: 0, scale: 1 },
-    hover: { 
-      y: -8, 
-      rotateX: 5,
-      scale: 1.02,
-      transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
-    }
-  };
-
-  const thumbnailStagger = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const thumbnailVariant = {
-    hidden: { opacity: 0, scale: 0.8, filter: 'blur(10px)' },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      filter: 'blur(0px)',
-      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-red-50">
@@ -114,98 +51,74 @@ export default function LandingPage() {
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 py-16 md:py-20 text-center">
-        <motion.div 
-          initial="hidden"
-          animate={mounted ? "visible" : "hidden"}
-          variants={scaleRevealVariant}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 text-red-700 border border-red-200 rounded-full text-sm font-semibold mb-6 shadow-sm"
-        >
-          <div className="w-5 h-5 bg-red-600 text-white rounded flex items-center justify-center text-xs font-bold">
-            Y
+        <FadeUp delay={0.05}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 text-red-700 border border-red-200 rounded-full text-sm font-semibold mb-6 shadow-sm">
+            <div className="w-5 h-5 bg-red-600 text-white rounded flex items-center justify-center text-xs font-bold">
+              Y
+            </div>
+            We already found your menu on Yelp
           </div>
-          We already found your menu on Yelp
-        </motion.div>
+        </FadeUp>
         
-        <motion.h2 
-          initial="hidden"
-          animate={mounted ? "visible" : "hidden"}
-          variants={textRiseVariant}
-          transition={{ delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight"
-        >
-          We digitized it<br />
-          <span className="text-red-600">for you</span>
-        </motion.h2>
+        <FadeUp delay={0.10}>
+          <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+            We digitized it<br />
+            <span className="text-red-600">for you</span>
+          </h2>
+        </FadeUp>
         
-        <motion.p 
-          initial="hidden"
-          animate={mounted ? "visible" : "hidden"}
-          variants={textRiseVariant}
-          transition={{ delay: 0.4 }}
-          className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto"
-        >
-          We found menu photos from your public Yelp reviews and extracted your items.<br />
-          Your digital menu is ready to review and publish.
-        </motion.p>
+        <FadeUp delay={0.18}>
+          <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto">
+            We found menu photos from your public Yelp reviews and extracted your items.<br />
+            Your digital menu is ready to review and publish.
+          </p>
+        </FadeUp>
 
-        <motion.div 
-          initial="hidden"
-          animate={mounted ? "visible" : "hidden"}
-          variants={scaleRevealVariant}
-          transition={{ delay: 0.6 }}
-          className="flex items-center justify-center gap-4 mb-8 flex-wrap"
-        >
-          <Link
-            href="/onboarding"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white text-lg font-bold rounded-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl animate-pulse"
-          >
-            Review My Draft Menu
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-          <Link
-            href="/onboarding"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 border-2 border-red-600 text-lg font-bold rounded-lg hover:bg-red-50 transition-all"
-          >
-            <Eye className="w-5 h-5" />
-            See What You're Missing
-          </Link>
-        </motion.div>
+        <FadeUp delay={0.26}>
+          <div className="flex items-center justify-center gap-4 mb-8 flex-wrap">
+            <Link
+              href="/onboarding"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white text-lg font-bold rounded-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl animate-pulse"
+            >
+              Review My Draft Menu
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/onboarding"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 border-2 border-red-600 text-lg font-bold rounded-lg hover:bg-red-50 transition-all"
+            >
+              <Eye className="w-5 h-5" />
+              See What You're Missing
+            </Link>
+          </div>
 
-        <motion.p 
-          initial="hidden"
-          animate={mounted ? "visible" : "hidden"}
-          variants={textRiseVariant}
-          transition={{ delay: 0.7 }}
-          className="text-sm text-slate-500"
-        >
-          Already built · Just review and publish · No credit card
-        </motion.p>
+          <p className="text-sm text-slate-500 mb-12">
+            Already built · Just review and publish · No credit card
+          </p>
+        </FadeUp>
 
         {/* Time Reframe */}
-        <motion.div 
-          initial="hidden"
-          animate={mounted ? "visible" : "hidden"}
-          variants={scaleRevealVariant}
-          transition={{ delay: 0.9 }}
-          className="mt-12 max-w-2xl mx-auto bg-white border border-slate-200 rounded-lg p-6 shadow-sm"
-        >
-          <div className="flex items-start gap-4">
-            <Clock className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
-            <div className="text-left">
-              <p className="text-slate-600 mb-2">
-                Most restaurants take <strong className="text-slate-900">1–2 days</strong> to manually rebuild and upload menus.
-              </p>
-              <p className="text-lg font-bold text-slate-900">
-                With MenuReady: <span className="text-green-600">Review and publish same day</span>
-              </p>
+        <RevealOnScroll>
+          <div className="mt-12 max-w-2xl mx-auto bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
+            <div className="flex items-start gap-4">
+              <Clock className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+              <div className="text-left">
+                <p className="text-slate-600 mb-2">
+                  Most restaurants take <strong className="text-slate-900">1–2 days</strong> to manually rebuild and upload menus.
+                </p>
+                <p className="text-lg font-bold text-slate-900">
+                  With MenuReady: <span className="text-green-600">Review and publish same day</span>
+                </p>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </RevealOnScroll>
       </section>
 
       {/* Yelp Visual Proof Section */}
       <section className="bg-white py-16 border-y-2 border-red-100">
-        <div className="max-w-7xl mx-auto px-4">
+        <RevealOnScroll>
+          <div className="max-w-7xl mx-auto px-4">
           <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3">
             Here's what customers see on Yelp right now
           </h3>
@@ -224,18 +137,10 @@ export default function LandingPage() {
               </div>
               
               {/* Desktop Grid */}
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={thumbnailStagger}
-                className="hidden md:grid grid-cols-3 gap-3"
-              >
+              <div className="hidden md:grid grid-cols-3 gap-3">
                 {mockYelpImages.map((img) => (
-                  <motion.div
+                  <div
                     key={img.id}
-                    variants={thumbnailVariant}
-                    style={{ y: img.parallax }}
                     className="aspect-square rounded-lg border border-red-200 overflow-hidden group hover:border-red-400 transition-all relative"
                   >
                     <img
@@ -252,9 +157,9 @@ export default function LandingPage() {
                         {img.reviewer} · {img.date}
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
 
               {/* Mobile Scroll */}
               <div className="md:hidden flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory">
@@ -295,25 +200,12 @@ export default function LandingPage() {
 
             {/* Right: Structured Menu */}
             <div>
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={textRiseVariant}
-                className="flex items-center gap-2 mb-4"
-              >
+              <div className="flex items-center gap-2 mb-4">
                 <CheckCircle className="w-8 h-8 text-green-600" />
                 <h4 className="font-bold text-slate-900 text-lg">Your Structured Digital Version</h4>
-              </motion.div>
+              </div>
               
-              <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={scaleRevealVariant}
-                transition={{ delay: 0.2 }}
-                className="bg-white border-2 border-green-300 rounded-lg p-6 shadow-lg"
-              >
+              <div className="bg-white border-2 border-green-300 rounded-lg p-6 shadow-lg">
                 <div className="mb-6">
                   <h5 className="text-2xl font-bold text-slate-900 mb-1">Sunrise Diner</h5>
                   <p className="text-slate-600 text-sm">American Diner · Orange, CA</p>
@@ -366,11 +258,13 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-        </div>
+          </div>
+        </RevealOnScroll>
       </section>
 
       {/* Revenue Impact Section */}
       <section className="py-16 bg-slate-50">
+        <RevealOnScroll>
         <div className="max-w-6xl mx-auto px-4">
           <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3">
             Digital menus increase revenue
@@ -418,13 +312,9 @@ export default function LandingPage() {
                 color: 'red',
               },
             ].map((item, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial="rest"
-                whileHover="hover"
-                variants={cardLiftVariant}
-                className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm group"
-                style={{ perspective: '1000px' }}
+                className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all group"
               >
                 <div className={`w-12 h-12 bg-${item.color}-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                   <item.icon className={`w-6 h-6 text-${item.color}-600`} />
@@ -435,7 +325,7 @@ export default function LandingPage() {
                 <p className="text-sm text-slate-600">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -455,10 +345,12 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
+        </RevealOnScroll>
       </section>
 
       {/* How it works */}
       <section className="bg-white py-16 border-t-2 border-red-100">
+        <RevealOnScroll>
         <div className="max-w-6xl mx-auto px-4">
           <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3">
             We Already Did The Work
@@ -491,13 +383,8 @@ export default function LandingPage() {
                 delay: 0.4,
               },
             ].map((item) => (
-              <motion.div 
+              <div 
                 key={item.step} 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={textRiseVariant}
-                transition={{ delay: item.delay }}
                 className="text-center group hover:scale-105 transition-transform"
               >
                 <div className={`w-16 h-16 bg-${item.color}-50 border-2 border-${item.color}-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:border-${item.color}-400 transition-colors`}>
@@ -509,10 +396,11 @@ export default function LandingPage() {
                 <p className="text-slate-600">
                   {item.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
+        </RevealOnScroll>
       </section>
 
       {/* Final CTA */}
@@ -557,16 +445,8 @@ export default function LandingPage() {
         </div>
       </footer>
 
-      {/* Mobile Sticky CTA */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t-2 border-red-600 p-4 shadow-2xl z-40">
-        <Link
-          href="/onboarding"
-          className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-red-600 text-white text-lg font-bold rounded-lg hover:bg-red-700 transition-all shadow-lg active:scale-95"
-        >
-          Review My Draft Menu
-          <ArrowRight className="w-5 h-5" />
-        </Link>
-      </div>
+      {/* Sticky Mobile CTA */}
+      <StickyMobileCTA />
     </div>
   );
 }
