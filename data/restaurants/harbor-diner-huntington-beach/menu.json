@@ -1,0 +1,121 @@
+{
+  "restaurant": "Harbor Diner",
+  "location": "Huntington Beach, CA",
+  "categories": [
+    {
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "Classic Breakfast",
+          "description": "Two eggs any style, bacon or sausage, hash browns, toast",
+          "price": "11.99"
+        },
+        {
+          "name": "Pancake Stack",
+          "description": "Three fluffy buttermilk pancakes with syrup and butter",
+          "price": "9.99"
+        },
+        {
+          "name": "Harbor Omelet",
+          "description": "Three-egg omelet with cheese, peppers, onions, mushrooms",
+          "price": "12.99"
+        },
+        {
+          "name": "French Toast",
+          "description": "Thick-cut French toast with powdered sugar",
+          "price": "10.99"
+        },
+        {
+          "name": "Breakfast Burrito",
+          "description": "Scrambled eggs, cheese, salsa, choice of bacon or sausage",
+          "price": "11.99"
+        }
+      ]
+    },
+    {
+      "name": "Lunch",
+      "items": [
+        {
+          "name": "Classic Burger",
+          "description": "Half-pound beef patty, lettuce, tomato, onion, pickles, fries",
+          "price": "13.99"
+        },
+        {
+          "name": "Grilled Chicken Sandwich",
+          "description": "Grilled chicken breast, lettuce, tomato, mayo, fries",
+          "price": "12.99"
+        },
+        {
+          "name": "Harbor Club",
+          "description": "Turkey, bacon, lettuce, tomato, mayo on toasted bread, fries",
+          "price": "13.99"
+        },
+        {
+          "name": "Caesar Salad",
+          "description": "Romaine, parmesan, croutons, Caesar dressing",
+          "price": "10.99"
+        },
+        {
+          "name": "Fish & Chips",
+          "description": "Beer-battered cod, fries, coleslaw, tartar sauce",
+          "price": "15.99"
+        },
+        {
+          "name": "BLT Sandwich",
+          "description": "Bacon, lettuce, tomato, mayo on toasted bread, fries",
+          "price": "11.99"
+        }
+      ]
+    },
+    {
+      "name": "Sides",
+      "items": [
+        {
+          "name": "French Fries",
+          "description": "",
+          "price": "4.99"
+        },
+        {
+          "name": "Onion Rings",
+          "description": "",
+          "price": "5.99"
+        },
+        {
+          "name": "Side Salad",
+          "description": "",
+          "price": "4.99"
+        },
+        {
+          "name": "Coleslaw",
+          "description": "",
+          "price": "3.99"
+        }
+      ]
+    },
+    {
+      "name": "Beverages",
+      "items": [
+        {
+          "name": "Coffee",
+          "description": "",
+          "price": "2.99"
+        },
+        {
+          "name": "Soft Drink",
+          "description": "",
+          "price": "2.99"
+        },
+        {
+          "name": "Iced Tea",
+          "description": "",
+          "price": "2.99"
+        },
+        {
+          "name": "Orange Juice",
+          "description": "",
+          "price": "3.99"
+        }
+      ]
+    }
+  ]
+}
