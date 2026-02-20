@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import QRCode from 'qrcode.react';
+import { QRCodeCanvas } from 'qrcode.react';
 
 export default function ConfirmationPage() {
   const searchParams = useSearchParams();
@@ -165,7 +165,7 @@ export default function ConfirmationPage() {
             </label>
             <div className="flex flex-col items-center">
               <div ref={qrRef} className="bg-white p-4 rounded-lg border border-slate-200 mb-4">
-                <QRCode value={liveUrl} size={200} level="H" />
+                <QRCodeCanvas value={liveUrl} size={200} level="H" />
               </div>
               <button
                 onClick={downloadQR}
