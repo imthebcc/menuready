@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, TrendingUp, Clock, Users, Star, DollarSign, Zap, Eye } from 'lucide-react';
 import { FadeUp } from '@/components/motion/FadeUp';
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll';
 import { StickyMobileCTA } from '@/components/StickyMobileCTA';
@@ -117,13 +116,13 @@ export default function LandingPage() {
               className="inline-flex items-center gap-2 px-8 py-4 bg-red-600 text-white text-lg font-bold rounded-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl animate-pulse"
             >
               Review My Draft Menu
-              <ArrowRight className="w-5 h-5" />
+              <i className="ri-arrow-right-line text-xl"></i>
             </Link>
             <Link
               href="/onboarding"
               className="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 border-2 border-red-600 text-lg font-bold rounded-lg hover:bg-red-50 transition-all"
             >
-              <Eye className="w-5 h-5" />
+              <i className="ri-eye-line text-xl"></i>
               See What You're Missing
             </Link>
           </div>
@@ -137,7 +136,7 @@ export default function LandingPage() {
         <RevealOnScroll>
           <div className="mt-12 max-w-2xl mx-auto bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
             <div className="flex items-start gap-4">
-              <Clock className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
+              <i className="ri-time-line text-2xl text-red-600 flex-shrink-0 mt-1"></i>
               <div className="text-left">
                 <p className="text-slate-600 mb-2">
                   Most restaurants take <strong className="text-slate-900">1–2 days</strong> to manually rebuild and upload menus.
@@ -259,14 +258,14 @@ export default function LandingPage() {
             {/* Right: Structured Menu (Brighter, More Contrast) */}
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl">
               <div className="flex items-center gap-2 mb-4">
-                <CheckCircle className="w-8 h-8 text-green-600" />
+                <i className="ri-checkbox-circle-line text-3xl text-green-600"></i>
                 <h4 className="font-bold text-slate-900 text-lg">Your Structured Digital Version</h4>
               </div>
               
               <div className="bg-white border-2 border-green-400 rounded-lg p-6 shadow-2xl relative ring-2 ring-green-200 ring-offset-2">
                 {/* Green Check Badge */}
                 <div className="absolute -top-3 -right-3 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg">
-                  <CheckCircle className="w-6 h-6" />
+                  <i className="ri-checkbox-circle-line text-2xl"></i>
                 </div>
 
                 <div className="mb-6">
@@ -355,7 +354,7 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all group">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <DollarSign className="w-6 h-6 text-green-600" />
+                  <i className="ri-money-dollar-circle-line text-2xl text-green-600"></i>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Higher average order values</h4>
                 <p className="text-sm text-slate-600">
@@ -365,7 +364,7 @@ export default function LandingPage() {
 
               <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all group">
                 <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <TrendingUp className="w-6 h-6 text-indigo-600" />
+                  <i className="ri-line-chart-line text-2xl text-indigo-600"></i>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">More add-ons selected</h4>
                 <p className="text-sm text-slate-600">
@@ -375,7 +374,7 @@ export default function LandingPage() {
 
               <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all group">
                 <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Star className="w-6 h-6 text-amber-600" />
+                  <i className="ri-star-line text-2xl text-amber-600"></i>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Better reviews from clarity</h4>
                 <p className="text-sm text-slate-600">
@@ -385,7 +384,7 @@ export default function LandingPage() {
 
               <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all group">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Eye className="w-6 h-6 text-blue-600" />
+                  <i className="ri-eye-line text-2xl text-blue-600"></i>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Increased Google discoverability</h4>
                 <p className="text-sm text-slate-600">
@@ -395,7 +394,7 @@ export default function LandingPage() {
 
               <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all group">
                 <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Zap className="w-6 h-6 text-purple-600" />
+                  <i className="ri-flashlight-line text-2xl text-purple-600"></i>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Faster table turnover</h4>
                 <p className="text-sm text-slate-600">
@@ -405,7 +404,7 @@ export default function LandingPage() {
 
               <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all group">
                 <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Users className="w-6 h-6 text-red-600" />
+                  <i className="ri-team-line text-2xl text-red-600"></i>
                 </div>
                 <h4 className="font-bold text-slate-900 mb-2">Higher customer confidence</h4>
                 <p className="text-sm text-slate-600">
@@ -417,7 +416,7 @@ export default function LandingPage() {
             {/* Conservative Claims Disclaimer */}
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-6 max-w-3xl mx-auto">
               <div className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" />
+                <i className="ri-checkbox-circle-line text-2xl text-green-600 flex-shrink-0 mt-1"></i>
                 <div>
                   <p className="text-slate-900 font-semibold mb-2">
                     Conservative estimate based on industry data:
@@ -497,7 +496,7 @@ export default function LandingPage() {
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-red-600 text-lg font-bold rounded-lg hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl"
           >
             Review My Draft Menu
-            <ArrowRight className="w-5 h-5" />
+            <i className="ri-arrow-right-line text-xl"></i>
           </Link>
         </div>
       </section>
