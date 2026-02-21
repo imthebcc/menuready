@@ -54,23 +54,23 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-red-50">
-      {/* Header */}
+      {/* Header - Compact on mobile */}
       <header className="border-b bg-white/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-slate-900">
+        <div className="max-w-screen-sm md:max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
+          <h1 className="text-xl md:text-2xl font-bold text-slate-900">
             Menu<span className="text-red-600">Ready</span>
           </h1>
           <a
             href="/contact"
-            className="text-sm text-slate-600 hover:text-slate-900 font-medium"
+            className="text-xs md:text-sm text-slate-600 hover:text-slate-900 font-medium"
           >
             Need help?
           </a>
         </div>
       </header>
 
-      {/* Social Proof Trust Bar */}
-      <div className="bg-gradient-to-r from-slate-100 via-red-50 to-slate-100 border-b border-slate-200">
+      {/* Social Proof Trust Bar - Hidden on mobile */}
+      <div className="hidden md:block bg-gradient-to-r from-slate-100 via-red-50 to-slate-100 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 py-2.5">
           <div className="flex items-center justify-center gap-8 text-xs md:text-sm flex-wrap text-slate-600">
             <span className="font-semibold">847 menus digitized this month</span>
@@ -84,30 +84,30 @@ export default function LandingPage() {
         </div>
       </div>
 
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-4 py-12 md:py-20 text-center">
+      {/* Hero - Above the fold on mobile */}
+      <section className="max-w-screen-sm md:max-w-6xl mx-auto px-4 py-8 md:py-20 text-center min-h-[calc(100vh-120px)] md:min-h-0 flex flex-col justify-center">
         <FadeUp delay={0.05}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 text-green-700 border border-green-200 rounded-full text-sm md:text-base font-semibold mb-6 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-green-50 text-green-700 border border-green-200 rounded-full text-xs md:text-sm font-semibold mb-4 md:mb-6 shadow-sm">
             <i className="ri-checkbox-circle-fill text-green-600"></i>
-            <span className="text-sm md:text-base">Revenue Opportunity Identified</span>
+            <span>Revenue Opportunity Identified</span>
           </div>
         </FadeUp>
         
         <FadeUp delay={0.10}>
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight px-2">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-slate-900 mb-4 md:mb-6 leading-tight">
             We already built your<br />
             <span className="text-red-600">digital menu</span>
           </h2>
         </FadeUp>
         
         <FadeUp delay={0.18}>
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed px-2">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
             Your menu is already built. Just review it and make it live — free.
           </p>
         </FadeUp>
 
         <FadeUp delay={0.26}>
-          <div className="flex flex-col items-stretch gap-4 mb-6 max-w-md mx-auto">
+          <div className="flex flex-col items-stretch gap-3 md:gap-4 max-w-md mx-auto">
             <Link
               href="/preview/harbor-diner-huntington-beach"
               className="w-full flex items-center justify-center gap-2 px-8 py-4 min-h-[52px] bg-red-600 text-white text-lg sm:text-xl font-bold rounded-lg hover:bg-red-700 transition-all shadow-lg hover:shadow-xl"
@@ -115,43 +115,22 @@ export default function LandingPage() {
               Preview My Menu (Free)
               <i className="ri-arrow-right-line text-xl sm:text-2xl"></i>
             </Link>
-            <p className="text-base sm:text-sm text-slate-500 text-center">
+            <p className="text-sm text-slate-500 text-center">
               No credit card. Takes seconds.
             </p>
           </div>
-
-          <p className="text-base sm:text-sm text-slate-600 mb-8 max-w-2xl mx-auto bg-slate-100 px-4 sm:px-6 py-4 rounded-lg border border-slate-200 leading-relaxed">
-            <i className="ri-line-chart-line text-green-600 mr-2"></i>
-            Restaurants using structured digital menus typically see higher order values and better reviews.
-          </p>
         </FadeUp>
 
-        {/* Time Reframe */}
-        <RevealOnScroll>
-          <div className="mt-12 max-w-2xl mx-auto bg-white border border-slate-200 rounded-lg p-6 shadow-sm">
-            <div className="flex items-start gap-4">
-              <i className="ri-time-line text-2xl text-red-600 flex-shrink-0 mt-1"></i>
-              <div className="text-left">
-                <p className="text-slate-600 mb-2">
-                  Most restaurants take <strong className="text-slate-900">1–2 days</strong> to manually rebuild and upload menus.
-                </p>
-                <p className="text-lg font-bold text-slate-900">
-                  With MenuReady: <span className="text-green-600">Review and publish same day</span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </RevealOnScroll>
       </section>
 
       {/* Yelp Visual Proof Section - Before vs After */}
       <section className="bg-white py-8 md:py-16 border-y-2 border-red-100">
         <RevealOnScroll>
-          <div className="max-w-7xl mx-auto px-4">
+          <div className="max-w-screen-sm md:max-w-7xl mx-auto px-4">
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3 leading-tight">
             Here's what customers see on Yelp right now
           </h3>
-          <p className="text-center text-slate-600 mb-8 md:mb-12 max-w-2xl mx-auto text-base sm:text-lg px-2">
+          <p className="text-center text-slate-600 mb-8 md:mb-12 max-w-2xl mx-auto text-base sm:text-lg">
             Scattered menu photos from reviews vs. your structured digital version
           </p>
 
@@ -194,19 +173,19 @@ export default function LandingPage() {
               </div>
 
               {/* Mobile Scroll - Show only first 3 photos */}
-              <div className="md:hidden flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory -mx-2 px-2">
+              <div className="md:hidden flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory -mx-2 px-2">
                 {mockYelpImages.slice(0, 3).map((img) => (
                   <div
                     key={img.id}
                     style={{ 
                       transform: `rotate(${img.rotation}deg)`,
                     }}
-                    className="flex-shrink-0 w-[calc(100vw-6rem)] max-w-[280px] aspect-square rounded-lg border-2 border-red-300 overflow-hidden snap-center relative shadow-md"
+                    className="flex-shrink-0 w-[70vw] max-w-[280px] min-h-[200px] rounded-lg border-2 border-red-300 overflow-hidden snap-center relative shadow-md"
                   >
                     <img
                       src={img.imageUrl}
                       alt={`Menu photo from ${img.reviewer}`}
-                      className="w-full h-full object-cover opacity-90 saturate-75 contrast-75"
+                      className="w-full h-full min-h-[200px] object-cover opacity-90 saturate-75 contrast-75"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 backdrop-blur-sm p-3">
@@ -252,15 +231,11 @@ export default function LandingPage() {
             {/* Right: Structured Menu (Clean White Background) */}
             <div className="bg-white p-4 sm:p-6 rounded-xl">
               <div className="flex items-center gap-2 mb-4">
-                <i className="ri-checkbox-circle-line text-2xl sm:text-3xl text-green-600"></i>
+                <i className="ri-checkbox-circle-fill text-2xl sm:text-3xl text-green-600"></i>
                 <h4 className="font-bold text-slate-900 text-base sm:text-lg">Your Structured Digital Version</h4>
               </div>
               
               <div className="bg-white border-2 border-green-400 rounded-lg p-4 sm:p-6 shadow-2xl relative ring-2 ring-green-200 ring-offset-2">
-                {/* Green Check Badge */}
-                <div className="absolute -top-3 -right-3 w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg">
-                  <i className="ri-checkbox-circle-line text-2xl"></i>
-                </div>
 
                 <div className="mb-6">
                   <h5 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1">Sunrise Diner</h5>
@@ -310,21 +285,21 @@ export default function LandingPage() {
               </div>
 
               {/* Benefits Statement */}
-              <div className="mt-4 space-y-1 text-sm text-slate-700 font-medium">
-                <div className="flex items-center gap-2">
-                  <span className="text-green-600">✓</span>
+              <div className="mt-6 space-y-3 text-base text-slate-800 font-medium">
+                <div className="flex items-center gap-3">
+                  <i className="ri-checkbox-circle-fill text-xl text-green-600"></i>
                   <span>Easy to read</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-600">✓</span>
+                <div className="flex items-center gap-3">
+                  <i className="ri-checkbox-circle-fill text-xl text-green-600"></i>
                   <span>Organized by category</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-600">✓</span>
+                <div className="flex items-center gap-3">
+                  <i className="ri-checkbox-circle-fill text-xl text-green-600"></i>
                   <span>Always up to date</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-green-600">✓</span>
+                <div className="flex items-center gap-3">
+                  <i className="ri-checkbox-circle-fill text-xl text-green-600"></i>
                   <span>Works everywhere</span>
                 </div>
               </div>
@@ -335,13 +310,13 @@ export default function LandingPage() {
       </section>
 
       {/* Revenue Impact Section */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-8 md:py-16 bg-slate-50">
         <RevealOnScroll>
-          <div className="max-w-6xl mx-auto px-4">
-            <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3">
+          <div className="max-w-screen-sm md:max-w-6xl mx-auto px-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3">
               Digital menus increase revenue
             </h3>
-            <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+            <p className="text-center text-slate-600 mb-8 md:mb-12 max-w-2xl mx-auto text-base sm:text-lg">
               Restaurants with structured menus typically see measurable increases in order value and customer satisfaction.
             </p>
 
@@ -423,13 +398,13 @@ export default function LandingPage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-white py-16 border-t-2 border-red-100">
+      <section className="bg-white py-8 md:py-16 border-t-2 border-red-100">
         <RevealOnScroll>
-          <div className="max-w-6xl mx-auto px-4">
-            <h3 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3">
+          <div className="max-w-screen-sm md:max-w-6xl mx-auto px-4">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-slate-900 mb-3">
               We Already Did The Work
             </h3>
-            <p className="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+            <p className="text-center text-slate-600 mb-8 md:mb-12 max-w-2xl mx-auto text-base sm:text-lg">
               Your draft menu is ready. Just review and publish.
             </p>
 
@@ -469,17 +444,17 @@ export default function LandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-br from-red-600 via-red-700 to-slate-900 py-16 border-t-4 border-red-500">
-        <div className="max-w-3xl mx-auto px-4 text-center text-white">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">Your menu is waiting</h3>
-          <p className="text-xl mb-6 opacity-90">
+      <section className="bg-gradient-to-br from-red-600 via-red-700 to-slate-900 py-12 md:py-16 border-t-4 border-red-500">
+        <div className="max-w-screen-sm md:max-w-3xl mx-auto px-4 text-center text-white">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Your menu is waiting</h3>
+          <p className="text-lg sm:text-xl mb-6 opacity-90">
             We already built your draft from Yelp. Review it now.
           </p>
-          <div className="flex items-center justify-center gap-3 mb-8 text-sm opacity-75">
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8 text-sm opacity-75">
             <span>✓ Menu extracted</span>
-            <span>·</span>
+            <span className="hidden sm:inline">·</span>
             <span>✓ Draft ready</span>
-            <span>·</span>
+            <span className="hidden sm:inline">·</span>
             <span>✓ Free to publish</span>
           </div>
           <Link

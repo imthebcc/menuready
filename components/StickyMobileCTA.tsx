@@ -35,11 +35,14 @@ export function StickyMobileCTA() {
           <div className="p-4">
             <Link
               href="/onboarding"
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-red-600 text-white text-lg font-bold rounded-lg hover:bg-red-700 transition-all shadow-lg active:scale-95"
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 min-h-[52px] bg-red-600 text-white text-lg font-bold rounded-lg hover:bg-red-700 transition-all shadow-lg active:scale-95"
             >
               Review My Draft Menu
               <ArrowRight className="w-5 h-5" />
             </Link>
+            <p className="text-center text-xs text-slate-500 mt-2">
+              Free · No credit card · Takes 30 seconds
+            </p>
           </div>
         </motion.div>
       )}
