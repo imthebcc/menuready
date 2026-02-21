@@ -273,16 +273,15 @@ export default function PreviewPage() {
                 <div className="space-y-4">
                   {category.items.map((item, itemIdx) => {
                     const price = parseFloat(item.price);
-                    const dollars = Math.floor(price);
-                    const cents = (price - dollars).toFixed(2).substring(1); // Gets ".00" part
+                    // Blur roughly every 3rd item (~30%)
+                    const shouldBlur = itemIdx % 3 === 1;
                     
                     return (
                       <div key={itemIdx} className="border-b border-slate-100 pb-4 last:border-0">
                         <div className="flex justify-between items-start mb-1">
                           <h3 className="text-lg font-semibold text-slate-900 flex-1">{item.name}</h3>
-                          <span className="text-lg font-bold text-red-600 ml-4 whitespace-nowrap">
-                            <span>${dollars}</span>
-                            <span className="blur-sm select-none">{cents}</span>
+                          <span className={`text-lg font-bold text-red-600 ml-4 whitespace-nowrap ${shouldBlur ? 'blur-sm select-none' : ''}`}>
+                            ${price.toFixed(2)}
                           </span>
                         </div>
                         {item.description && (
