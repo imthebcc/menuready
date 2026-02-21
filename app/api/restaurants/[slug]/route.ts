@@ -33,22 +33,36 @@ export async function GET(
       );
     }
 
-    // Transform menu.json structure to match preview page expectations
-    // menu.json has: { categories: [{ name, items }] }
-    // Preview expects: { menu: [{ category, items }] }
-    const menuData = menuFile.categories?.map((cat: any) => ({
-      category: cat.name,
-      items: cat.items.map((item: any) => ({
-        name: item.name,
-        price: item.price, // Keep as numeric string, frontend adds $
-        description: item.description || undefined,
-      })),
-    })) || [];
+    // Use stored menu_data if available (edited version), otherwise use file
+    let menuData;
+    if (storedMenuData && storedMenuData.categories) {
+      // Use edited version from Supabase
+      menuData = storedMenuData.categories.map((cat: any) => ({
+        category: cat.name,
+        items: cat.items.map((item: any) => ({
+          name: item.name,
+          price: item.price,
+          description: item.description || undefined,
+        })),
+      }));
+    } else {
+      // Use original file version
+      menuData = menuFile.categories?.map((cat: any) => ({
+        category: cat.name,
+        items: cat.items.map((item: any) => ({
+          name: item.name,
+          price: item.price, // Keep as numeric string, frontend adds $
+          description: item.description || undefined,
+        })),
+      })) || [];
+    }
 
     console.log('[API] Transformed menu:', menuData.length, 'categories');
 
-    // Check if restaurant is paid (from Supabase if available)
+    // Check if restaurant is paid and get menu_data from Supabase
     let paid = false;
+    let paidAt = null;
+    let storedMenuData = null;
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
@@ -58,12 +72,14 @@ export async function GET(
         const supabase = createClient(supabaseUrl, supabaseKey);
         const { data } = await supabase
           .from('restaurants')
-          .select('paid')
+          .select('paid, paid_at, menu_data')
           .eq('slug', slug)
           .single();
         
         if (data) {
           paid = data.paid || false;
+          paidAt = data.paid_at || null;
+          storedMenuData = data.menu_data || null;
         }
       } catch (err) {
         console.log('[API] Could not check paid status:', err);
@@ -81,6 +97,7 @@ export async function GET(
       location: menuFile.location || 'Location not specified',
       created_at: new Date().toISOString(),
       paid,
+      paid_at: paidAt,
     };
 
     console.log('[API] Returning restaurant:', restaurant.name);

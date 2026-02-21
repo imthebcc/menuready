@@ -21,6 +21,7 @@ interface Restaurant {
   name: string;
   location: string;
   paid?: boolean;
+  paid_at?: string | null;
 }
 
 export default function PreviewPage() {
@@ -33,6 +34,12 @@ export default function PreviewPage() {
   const [error, setError] = useState('');
   const [expired, setExpired] = useState(false);
   const [expiryText, setExpiryText] = useState('');
+  const [editingItem, setEditingItem] = useState<string | null>(null); // "categoryIndex-itemIndex"
+  const [addingToCategory, setAddingToCategory] = useState<number | null>(null);
+  const [newItemName, setNewItemName] = useState('');
+  const [newItemPrice, setNewItemPrice] = useState('');
+  const [editWindowOpen, setEditWindowOpen] = useState(false);
+  const [daysRemaining, setDaysRemaining] = useState(0);
   
   // Supabase storage base URL (client-side accessible)
   const storageUrl = process.env.NEXT_PUBLIC_SUPABASE_URL 

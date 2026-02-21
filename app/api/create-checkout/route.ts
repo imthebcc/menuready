@@ -31,10 +31,10 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'payment',
-      success_url: `${appUrl}/confirmation?session_id={CHECKOUT_SESSION_ID}&slug=${slug}`,
+      success_url: `${appUrl}/preview/${slug}?success=true`,
       cancel_url: `${appUrl}/preview/${slug}`,
       metadata: {
-        restaurant_slug: slug,
+        slug: slug,
       },
     });
 
