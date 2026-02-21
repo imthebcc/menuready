@@ -1,0 +1,56 @@
+{
+  "restaurant": "Sarinana's Tamale Factory",
+  "location": "Santa Ana, CA",
+  "categories": [
+    {
+      "name": "Breakfast",
+      "items": [
+        {
+          "name": "PASTE ITEM NAME HERE",
+          "description": "Description if available",
+          "price": "0.00"
+        }
+      ]
+    },
+    {
+      "name": "Soup & Tamales",
+      "items": [
+        {
+          "name": "PASTE ITEM NAME HERE",
+          "description": "Description if available",
+          "price": "0.00"
+        }
+      ]
+    },
+    {
+      "name": "Tacos",
+      "items": [
+        {
+          "name": "PASTE ITEM NAME HERE",
+          "description": "Description if available",
+          "price": "0.00"
+        }
+      ]
+    },
+    {
+      "name": "Burritos",
+      "items": [
+        {
+          "name": "PASTE ITEM NAME HERE",
+          "description": "Description if available",
+          "price": "0.00"
+        }
+      ]
+    },
+    {
+      "name": "Plates",
+      "items": [
+        {
+          "name": "PASTE ITEM NAME HERE",
+          "description": "Description if available",
+          "price": "0.00"
+        }
+      ]
+    }
+  ]
+}
