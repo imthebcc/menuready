@@ -269,13 +269,14 @@ export default function PreviewPage() {
                 <div className="space-y-4">
                   {category.items.map((item, itemIdx) => {
                     const price = parseFloat(item.price);
+                    const display = isNaN(price) ? '' : `$${price.toFixed(2)}`;
                     
                     return (
                       <div key={itemIdx} className="border-b border-slate-100 pb-4 last:border-0">
                         <div className="flex justify-between items-start mb-1">
                           <h3 className="text-lg font-semibold text-slate-900 flex-1">{item.name}</h3>
                           <span className="text-lg font-bold text-red-600 ml-4 whitespace-nowrap">
-                            ${price.toFixed(2)}
+                            {display}
                           </span>
                         </div>
                         {item.description && (
