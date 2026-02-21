@@ -1,0 +1,16 @@
+{
+  "restaurant": "Restaurant Name",
+  "location": "City, State",
+  "categories": [
+    {
+      "name": "Category Name",
+      "items": [
+        {
+          "name": "Item Name",
+          "description": "Optional description",
+          "price": "9.99"
+        }
+      ]
+    }
+  ]
+}

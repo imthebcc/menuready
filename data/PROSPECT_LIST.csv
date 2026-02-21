@@ -1,0 +1,11 @@
+Priority,Name,Location,Rating,Reviews,Phone,Yelp URL,Tier,Menu Photo Count,Notes,Status
+1,El Mestizo,3317 W 1st St Santa Ana,4.0,337,(714) 554-0905,yelp.com/biz/el-mestizo-santa-ana-santa-ana,2,447,Unclaimed listing • Oaxacan Mexican • No website,NEEDS_VERIFICATION
+2,Sarinana's Tamale Factory,2218 W 5th St Santa Ana,3.7,458,NEEDS_PHONE,yelp.com/biz/sarinanas-tamale-factory-santa-ana-4,2,398,Cash only • Claimed listing • Clear categories,NEEDS_VERIFICATION
+3,Albertaco's Mexican Food,Santa Ana,3.3,1300,NEEDS_PHONE,yelp.com/biz/albertacos-mexican-food-santa-ana,1,TBD,Rating recovery angle • High volume,NEEDS_VERIFICATION
+4,Rosa Madera,2158 Bristol St Santa Ana,3.9,1100,NEEDS_PHONE,yelp.com/biz/rosa-madera-santa-ana,2,1461,Big menu • High photo count,BACKUP
+5,NORMS Restaurant,102 E 17th St Santa Ana,3.1,720,NONE_LISTED,yelp.com/biz/norms-restaurant-santa-ana,1,TBD,24hr diner • Website menu exists • SKIP,SKIP
+6,Casa Ramos Restaurant,1717 S Main St Santa Ana,TBD,258,(657) 232-1096,yelp.com/biz/casa-ramos-restaurant-santa-ana,TBD,312,Carne asada/tacos • Family feel,BACKUP
+7,Romans Mexican Restaurant,Santa Ana,3.6,213,NEEDS_PHONE,NEEDS_URL,2,TBD,Family-owned vibe,BACKUP
+8,5 Estrellas Mexican Restaurant,Santa Ana,3.6,34,NEEDS_PHONE,NEEDS_URL,2,TBD,Very low review count • Family owned,SKIP_LOW_REVIEWS
+9,Chinese BBQ spot HB,Huntington Beach,2.6,89,NEEDS_PHONE,NEEDS_URL,1,TBD,Rating recovery pitch,BACKUP
+10,Kung Pao Bowl,6840 Edinger Ave HB,TBD,695,(714) 842-7262,yelp.com/biz/kung-pao-bowl-huntington-beach,TBD,466,30+ year restaurant • Established,BACKUP
