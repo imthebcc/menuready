@@ -106,10 +106,33 @@ export default function PreviewPage() {
     }
   }
 
-  function handleUpgrade() {
-    // For MVP: Show coming soon message instead of Stripe checkout
-    setShowUpgradeMessage(true);
-    setShowEmailInput(true);
+  async function handleUpgrade() {
+    try {
+      console.log('[Upgrade] Creating checkout session for:', slug);
+      
+      const res = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        console.error('[Upgrade] Checkout failed:', data.error);
+        setShowUpgradeMessage(true);
+        setShowEmailInput(true);
+        return;
+      }
+
+      console.log('[Upgrade] Redirecting to Stripe:', data.url);
+      // Redirect to Stripe checkout
+      window.location.href = data.url;
+    } catch (err) {
+      console.error('[Upgrade] Error:', err);
+      setShowUpgradeMessage(true);
+      setShowEmailInput(true);
+    }
   }
 
   if (loading) {
@@ -204,18 +227,27 @@ export default function PreviewPage() {
               {/* Benefits */}
               <div className="bg-white rounded-lg shadow-sm border border-slate-200 p-6">
                 <h3 className="text-lg font-bold text-slate-900 mb-4">Revenue Benefits</h3>
-                <ul className="space-y-3 text-sm text-slate-700">
+                <ul className="space-y-4 text-sm text-slate-700">
                   <li className="flex items-start">
                     <i className="ri-check-line text-green-600 text-xl mr-2 flex-shrink-0"></i>
-                    <span>Higher order values</span>
+                    <div>
+                      <div className="font-semibold">23% higher average order value</div>
+                      <div className="text-xs text-slate-500 mt-0.5">— Toast Restaurant Report 2023</div>
+                    </div>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-green-600 text-xl mr-2 flex-shrink-0"></i>
-                    <span>Better reviews</span>
+                    <div>
+                      <div className="font-semibold">4.2x more Google search visibility</div>
+                      <div className="text-xs text-slate-500 mt-0.5">— Google Business data</div>
+                    </div>
                   </li>
                   <li className="flex items-start">
                     <i className="ri-check-line text-green-600 text-xl mr-2 flex-shrink-0"></i>
-                    <span>Boost retention</span>
+                    <div>
+                      <div className="font-semibold">68% of diners check menus online before visiting</div>
+                      <div className="text-xs text-slate-500 mt-0.5">— National Restaurant Association</div>
+                    </div>
                   </li>
                 </ul>
               </div>
