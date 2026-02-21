@@ -40,7 +40,7 @@ export async function GET(
       category: cat.name,
       items: cat.items.map((item: any) => ({
         name: item.name,
-        price: `$${item.price}`,
+        price: item.price, // Keep as numeric string, frontend adds $
         description: item.description || undefined,
       })),
     })) || [];
