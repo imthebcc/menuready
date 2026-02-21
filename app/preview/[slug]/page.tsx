@@ -30,61 +30,74 @@ export default function PreviewPage() {
   const [menu, setMenu] = useState<MenuCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [timeRemaining, setTimeRemaining] = useState<number>(0);
   const [expired, setExpired] = useState(false);
+  const [expiryText, setExpiryText] = useState('');
 
   useEffect(() => {
+    // Clean up old localStorage key (one-time reset)
+    localStorage.removeItem(`preview_expiry_${slug}`);
+    
     fetchRestaurantData();
     initializeTimer();
   }, [slug]);
 
   useEffect(() => {
-    if (timeRemaining <= 0) {
-      setExpired(true);
-      return;
-    }
-
+    // Check expiry every 10 seconds (no visible countdown)
     const interval = setInterval(() => {
-      const expiryTime = localStorage.getItem(`preview_expiry_${slug}`);
-      if (!expiryTime) return;
-
-      const remaining = parseInt(expiryTime) - Date.now();
-      if (remaining <= 0) {
-        setExpired(true);
-        setTimeRemaining(0);
-      } else {
-        setTimeRemaining(remaining);
-      }
-    }, 1000);
+      checkExpiry();
+    }, 10000);
 
     return () => clearInterval(interval);
-  }, [timeRemaining, slug]);
+  }, [slug]);
 
   function initializeTimer() {
-    const storageKey = `preview_expiry_${slug}`;
-    const existingExpiry = localStorage.getItem(storageKey);
+    const expiryKey = `preview_expiry_${slug}`;
+    let expiry = sessionStorage.getItem(expiryKey);
 
-    if (existingExpiry) {
-      const remaining = parseInt(existingExpiry) - Date.now();
-      if (remaining <= 0) {
-        setExpired(true);
-        setTimeRemaining(0);
-      } else {
-        setTimeRemaining(remaining);
-      }
+    if (!expiry) {
+      // Set 24 hour expiry
+      const expiryTime = Date.now() + (24 * 60 * 60 * 1000);
+      sessionStorage.setItem(expiryKey, expiryTime.toString());
+      expiry = expiryTime.toString();
+    }
+
+    const expiryTimestamp = parseInt(expiry);
+    const now = Date.now();
+
+    if (expiryTimestamp <= now) {
+      setExpired(true);
+      setExpiryText('expired');
     } else {
-      // Set 30 minute expiry
-      const expiryTime = Date.now() + (30 * 60 * 1000);
-      localStorage.setItem(storageKey, expiryTime.toString());
-      setTimeRemaining(30 * 60 * 1000);
+      setExpired(false);
+      
+      // Format expiry date
+      const expiryDate = new Date(expiryTimestamp);
+      const formatted = expiryDate.toLocaleString('en-US', {
+        weekday: 'long',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+      
+      setExpiryText(formatted);
     }
   }
 
-  function formatTime(ms: number): string {
-    const totalSeconds = Math.floor(ms / 1000);
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = totalSeconds % 60;
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  function checkExpiry() {
+    const expiryKey = `preview_expiry_${slug}`;
+    const expiry = sessionStorage.getItem(expiryKey);
+
+    if (!expiry) {
+      initializeTimer();
+      return;
+    }
+
+    const expiryTimestamp = parseInt(expiry);
+    const now = Date.now();
+
+    if (expiryTimestamp <= now && !expired) {
+      setExpired(true);
+    }
   }
 
   async function fetchRestaurantData() {
@@ -187,9 +200,9 @@ export default function PreviewPage() {
               Publish My Menu — $99 →
             </button>
 
-            {/* Countdown Timer */}
+            {/* Static Deadline */}
             <p className="text-sm text-amber-700 mt-3">
-              ⏱ This preview expires in {formatTime(timeRemaining)}
+              This preview expires {expiryText}
             </p>
           </div>
         </div>
