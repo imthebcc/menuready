@@ -259,17 +259,34 @@ export default function PreviewPage() {
                   {category.category}
                 </h2>
                 <div className="space-y-4">
-                  {category.items.map((item, itemIdx) => (
-                    <div key={itemIdx} className="border-b border-slate-100 pb-4 last:border-0">
-                      <div className="flex justify-between items-start mb-1">
-                        <h3 className="text-lg font-semibold text-slate-900 flex-1">{item.name}</h3>
-                        <span className="text-lg font-bold text-red-600 ml-4 whitespace-nowrap">${item.price}</span>
+                  {category.items.map((item, itemIdx) => {
+                    const price = parseFloat(item.price);
+                    const dollars = Math.floor(price);
+                    const cents = (price - dollars).toFixed(2).substring(1); // Gets ".00" part
+                    
+                    return (
+                      <div key={itemIdx} className="border-b border-slate-100 pb-4 last:border-0">
+                        <div className="flex justify-between items-start mb-1">
+                          <h3 className="text-lg font-semibold text-slate-900 flex-1">{item.name}</h3>
+                          <span className="text-lg font-bold text-red-600 ml-4 whitespace-nowrap">
+                            {emailCaptured ? (
+                              // Show full price after email captured
+                              `$${price.toFixed(2)}`
+                            ) : (
+                              // Blur cents before email captured
+                              <>
+                                <span>${dollars}</span>
+                                <span className="blur-sm select-none">{cents}</span>
+                              </>
+                            )}
+                          </span>
+                        </div>
+                        {item.description && (
+                          <p className="text-sm text-slate-600">{item.description}</p>
+                        )}
                       </div>
-                      {item.description && (
-                        <p className="text-sm text-slate-600">{item.description}</p>
-                      )}
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )) : (
